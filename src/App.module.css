@@ -19,4 +19,15 @@ img {
   display:flex;
   max-width:900px;
   margin: auto;
+  gap:80px;
+}
+
+.container .leftSide {
+  flex:1;
+  background-color:red;
+}
+
+.container .rightSide {
+  flex:1;
+  background-color:green;
 }
