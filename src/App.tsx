@@ -2,13 +2,15 @@ import { useState } from 'react'
 import styles from './App.module.css'
 import poweredImg from './assets/images/powered.png'
 
+import { levels, calculateImc } from './helpers/imc'
+
 const App = () => {
   const [height, setHeight] = useState(0)
   const [weight, setWeight] = useState(0)
 
   const handleCalculateImc = () => {
     if (height && weight) {
-      
+      calculateImc(height, weight)
     } else {
       alert("Digite todos os campos")
     }
