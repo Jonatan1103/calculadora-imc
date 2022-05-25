@@ -68,4 +68,12 @@ img {
 .container .rightSide {
   flex:1;
   background-color:green;
+  display:flex;
+}
+
+.container .rightSide .grid {
+  flex:1;
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:20px;
 }
