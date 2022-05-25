@@ -3,6 +3,8 @@ import styles from './App.module.css'
 import poweredImg from './assets/images/powered.png'
 
 import { levels, calculateImc } from './helpers/imc'
+import GridItem from './components/GridItem'
+ 
 
 const App = () => {
   const [height, setHeight] = useState(0)
@@ -51,8 +53,9 @@ const App = () => {
 
         <div className={styles.rightSide}>
           <div className={styles.grid}>
+            
           {levels.map((item, index) => (
-            <div key={index}> {item.title} </div>
+            <GridItem key={index} data={item}/>
           ))}
           </div>
         </div>
