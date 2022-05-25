@@ -67,7 +67,6 @@ img {
 
 .container .rightSide {
   flex:1;
-  background-color:green;
   display:flex;
 }
 
