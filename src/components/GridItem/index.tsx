@@ -24,6 +24,10 @@ const GridItem = ({ data }: GridItemProps ) => {
         {data.title}
       </div>
 
+      {data.yourImc && 
+        <div className={styles.yourImc}>Seu IMC é de {data.yourImc} kg/m²</div>
+      }
+
       <div className={styles.gridInfo}>
         <>
           O IMC está entre <strong>{data.imc[0]}</strong> e <strong>{data.imc[1]}</strong>

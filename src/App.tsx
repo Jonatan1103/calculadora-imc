@@ -1,6 +1,8 @@
 import { useState } from 'react'
+
 import styles from './App.module.css'
 import poweredImg from './assets/images/powered.png'
+import leftArrowImg from './assets/images/leftarrow.png'
 
 import { levels, calculateImc, Level } from './helpers/imc'
 import GridItem from './components/GridItem'
@@ -14,10 +16,15 @@ const App = () => {
   const handleCalculateImc = () => {
     if (height && weight) {
       setShowInfoImc(calculateImc(height, weight))
-      console.log(calculateImc(height, weight));
     } else {
       alert("Digite todos os campos")
     }
+  }
+
+  const handleBackButton = () => {
+    setShowInfoImc(null)
+    setHeight(0)
+    setWeight(0)
   }
 
   return (
@@ -64,7 +71,14 @@ const App = () => {
 
           {showInfoImc &&
             <div className={styles.rightBig}>
-              <div className={styles.rightArrow}></div>
+              <div 
+                className={styles.rightArrow}
+                onClick={handleBackButton}
+              >
+                <img src={leftArrowImg} 
+                  alt="seta para a esquerda" 
+                />
+              </div>
               <GridItem data={showInfoImc}/>
             </div>
           }

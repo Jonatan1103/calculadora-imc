@@ -76,3 +76,32 @@ img {
   grid-template-columns:repeat(2, 1fr);
   gap:20px;
 }
+
+.container .rightSide .rightBig {
+  flex:1;
+  display:flex;
+}
+
+.container .rightSide .rightArrow {
+  background:#227C9D;
+  position:absolute;
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:5px;
+  cursor:pointer;
+  margin-left:-35px;
+  margin-top:135px;
+  transition:all ease .3s;
+}
+
+.container .rightSide .rightArrow:hover {
+  background-color:rgba(38, 142, 180, 1);
+}
+
+.container .rightSide .rightArrow img {
+  width:25px;
+}
