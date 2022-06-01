@@ -2,17 +2,19 @@ import { useState } from 'react'
 import styles from './App.module.css'
 import poweredImg from './assets/images/powered.png'
 
-import { levels, calculateImc } from './helpers/imc'
+import { levels, calculateImc, Level } from './helpers/imc'
 import GridItem from './components/GridItem'
  
 
 const App = () => {
   const [height, setHeight] = useState(0)
   const [weight, setWeight] = useState(0)
+  const [showInfoImc, setShowInfoImc] = useState<Level | null>(null)
 
   const handleCalculateImc = () => {
     if (height && weight) {
-      calculateImc(height, weight)
+      setShowInfoImc(calculateImc(height, weight))
+      console.log(calculateImc(height, weight));
     } else {
       alert("Digite todos os campos")
     }
@@ -52,12 +54,21 @@ const App = () => {
         </div>
 
         <div className={styles.rightSide}>
-          <div className={styles.grid}>
-            
-          {levels.map((item, index) => (
-            <GridItem key={index} data={item}/>
-          ))}
-          </div>
+          {!showInfoImc && 
+            <div className={styles.grid}>
+              {levels.map((item, index) => (
+                <GridItem key={index} data={item}/>
+              ))}
+            </div>          
+          }
+
+          {showInfoImc &&
+            <div className={styles.rightBig}>
+              <div className={styles.rightArrow}></div>
+              <GridItem data={showInfoImc}/>
+            </div>
+          }
+
         </div>
 
       </div>
