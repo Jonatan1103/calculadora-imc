@@ -48,6 +48,11 @@ img {
   outline:none;
 }
 
+.container .leftSide input:disabled {
+  opacity:0.5;
+  cursor:not-allowed;
+}
+
 .container .leftSide button {
   background-color:#227c9d;
   color:#fff;
@@ -63,6 +68,11 @@ img {
 
 .container .leftSide button:hover {
   opacity:0.8;
+}
+
+.container .leftSide button:disabled {
+  cursor:not-allowed;
+  background-color:#a81e1e;
 }
 
 .container .rightSide {

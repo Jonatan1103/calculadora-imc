@@ -47,6 +47,7 @@ const App = () => {
             placeholder="Digite a sua altura ex: 1.5 (em métros)"    
             value={height > 0 ? height : ''}
             onChange={ e => setHeight(e.target.valueAsNumber)}
+            disabled={showInfoImc ? true : false}
           />
 
           <input 
@@ -54,9 +55,15 @@ const App = () => {
             placeholder="Digite seu peso ex: 76.5 (em kg)"    
             value={weight > 0 ? weight : ''}
             onChange={ e => setWeight(e.target.valueAsNumber)}
+            disabled={showInfoImc ? true : false}
           />
 
-          <button onClick={handleCalculateImc}>Calcular</button>
+          <button 
+            disabled={showInfoImc ? true : false} 
+            onClick={handleCalculateImc}
+          >
+            Calcular
+          </button>
 
         </div>
 
