@@ -115,3 +115,28 @@ img {
 .container .rightSide .rightArrow img {
   width:25px;
 }
+
+@media (max-width:770px) {
+  header {
+    padding:0 20px;
+  }
+
+  .container {
+    padding:0 20px;
+    flex-direction: column;
+    gap:20px;
+  }
+
+  .container .rightSide .rightArrow {
+    margin-left:0;
+    margin-top:0;
+    border-radius:10px 5px 5px 5px;
+  }
+}
+
+@media (max-width:460px) {
+  .container .rightSide .grid {
+    grid-template-columns:1fr;
+    margin-bottom: 20px;
+  }
+}
